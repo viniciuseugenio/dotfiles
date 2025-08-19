@@ -1,0 +1,86 @@
+// -*- mode: jsonc -*-
+{
+  "layer": "bottom",
+  "position": "top",
+  "mod": "dock",
+  "hidden": true,
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  "reload_style_on_change": true,
+  "margin-top": 10,
+  "margin-right": 10,
+  "margin-left": 10,
+  "margin-bottom": 0,
+  "spacing": 4,
+
+  "modules-left": [
+    "custom/logo",
+    "hyprland/workspaces",
+  ],
+
+  "modules-center": ["mpris"],
+
+  "modules-right": [
+    "pulseaudio",
+    "tray",
+    "clock",
+    "custom/notify",
+  ],
+
+  "custom/logo": {
+    "format": "󰣇",
+    "interval": "once",
+    "tooltip": false,
+  },
+
+  "custom/notify": {
+    "format": "󰂚",
+    "on-click": "swaync-client -t -sw",
+    "tooltip": false,
+  },
+
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "rotate": 0,
+    "all-outputs": true,
+    "active-only": false,
+    "on-click": "activate",
+    "persistent-workspaces": {
+      "*": 3,
+    },
+  },
+
+  "tray": {
+    "spacing": 5,
+  },
+
+
+  "mpris": {
+    "format": "阮 {artist} - {title}",
+    "max-length": 50,
+    "scroll": true,
+    "on-click": "playerctl play-pause",
+    "on-scroll-up": "playerctld shift",
+    "on-scroll-down": "playerctld unshift",
+    "on-middle-click": "playerctl previous",
+    "on-click-right": "playerctl next",
+  },
+
+
+  "pulseaudio": {
+    "format": "  {volume}%",
+    "rotate": 0,
+    "format-muted": "  Muted",
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "scroll-step": 5,
+    "tooltip": false,
+  },
+
+  "clock": {
+    "format": "{:%I:%M %p | %d %B}",
+    "rotate": 0,
+    "format-alt": "{:%I:%M %p | %d %B}",
+    "tooltip": false,
+  },
+}
