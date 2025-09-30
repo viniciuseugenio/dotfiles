@@ -2,15 +2,13 @@
 {
   "layer": "bottom",
   "position": "top",
-  "mod": "dock",
-  "hidden": true,
+  "mode": "dock",
   "exclusive": true,
   "passthrough": false,
-  "gtk-layer-shell": true,
   "reload_style_on_change": true,
-  "margin-top": 10,
-  "margin-right": 10,
-  "margin-left": 10,
+  "margin-top": 0,
+  "margin-right": 0,
+  "margin-left": 0,
   "margin-bottom": 0,
   "spacing": 4,
 
@@ -23,10 +21,17 @@
 
   "modules-right": [
     "pulseaudio",
+    "custom/divider",
+    "memory",
+    "custom/divider",
     "tray",
+    "custom/divider",
     "clock",
-    "custom/notify",
   ],
+
+  "memory": {
+    "format": "  {percentage}%"
+  },
 
   "custom/logo": {
     "format": "󰣇",
@@ -57,7 +62,11 @@
 
 
   "mpris": {
-    "format": "阮 {artist} - {title}",
+    "format": "{status_icon} {artist} - {title}",
+    "status-icons": {
+      "playing": "⏸",
+      "paused": "▶"
+    },
     "max-length": 50,
     "scroll": true,
     "on-click": "playerctl play-pause",
@@ -78,9 +87,15 @@
   },
 
   "clock": {
-    "format": "{:%I:%M %p | %d %B}",
+    "format": "{:%A, %B %d   %I %M %p}",
     "rotate": 0,
     "format-alt": "{:%I:%M %p | %d %B}",
     "tooltip": false,
   },
+
+  
+  "custom/divider": {
+    "format": "|",
+    "tooltip": false
+  }
 }

@@ -1,58 +1,29 @@
 * {
   border: none;
   border-radius: 0px;
-  font-family: "SF Pro Display";
+  font-family: "JetBrainsMono NF", "monospace";
   font-weight: 500;
-  font-size: 13px;
+  font-size: 14px;
+  padding: 0.6px 0;
 }
 
 window#waybar {
-  background: transparent;
-  opacity: 0.9;
-  border-radius: 10px;
-}
-
-#mpris {
-  padding: 0px 30px 0px 30px;
-  border-radius: 10px;
+  background: #12100c;
+  opacity: 0.95;
 }
 
 #workspaces button {
-  box-shadow: none;
-  text-shadow: none;
-  padding: 0px;
-  border-radius: 8px;
+  padding: 0 10px;
   color: #504945;
-  padding: 0px 10px 0px 10px;
-  transition: all 0.15s ease-in;
+  font-size: 16px !important;
 }
 
 #workspaces button.active {
   color: #b59e7d;
-  padding: 0px 10px 0px 10px;
-  border-radius: 10px;
-  background: #362f25;
-  animation: ws_active 20s ease-in-out 1;
-  /* transition: all 0.4s cubic-bezier(.55,-0.68,.48,1.682); */
-}
-
-#workspaces button:not(.active):not(.empty):not(:hover) {
-  color: #fbf1c7;
 }
 
 #workspaces button:hover {
-  background: #362f25;
   color: #fbf1c7;
-  animation: ws_hover 20s ease-in-out 1;
-  transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-#workspaces button.active:hover {
-  color: #b59e7d;
-}
-
-.module {
-  background-color: #12100c;
 }
 
 #battery,
@@ -66,25 +37,19 @@ window#waybar {
 #temperature,
 #workspaces,
 #custom-logo,
-#custom-power,
-#custom-audio-icon,
-#custom-network-icon,
-#custom-cpu-icon,
-#custom-notify,
-#custom-memory-icon {
+#custom-notify {
   color: #fbf1c7;
-  opacity: 1;
-  border-radius: 10px;
-  padding: 3px 15px 3px 15px;
-}
-
-#workspaces {
-  padding: 5px;
+  padding: 3px 15px;
 }
 
 #custom-logo {
   font-size: 20px;
   color: #b59e7d;
-  padding: 0px 18px 0px 10px;
-  margin-right: 5px;
+  padding: 0 0 0 10px;
+  margin-right: 0;
+}
+
+#custom-divider {
+  font-size: 8px;
+  color: #777;
 }
