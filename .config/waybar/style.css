@@ -4,7 +4,7 @@
   font-family: "JetBrainsMono NF", "monospace";
   font-weight: 500;
   font-size: 14px;
-  padding: 0.6px 0;
+  padding: 0.3px 0;
 }
 
 window#waybar {
@@ -15,7 +15,7 @@ window#waybar {
 #workspaces button {
   padding: 0 10px;
   color: #504945;
-  font-size: 16px !important;
+  font-size: 16px;
 }
 
 #workspaces button.active {
@@ -37,7 +37,8 @@ window#waybar {
 #temperature,
 #workspaces,
 #custom-logo,
-#custom-notify {
+#custom-notify,
+#custom-clock {
   color: #fbf1c7;
   padding: 3px 15px;
 }

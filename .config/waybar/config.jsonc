@@ -24,9 +24,9 @@
     "custom/divider",
     "memory",
     "custom/divider",
-    "tray",
+    "custom/clock",
     "custom/divider",
-    "clock",
+    "tray",
   ],
 
   "memory": {
@@ -76,7 +76,6 @@
     "on-click-right": "playerctl next",
   },
 
-
   "pulseaudio": {
     "format": "vol: {volume}%",
     "rotate": 0,
@@ -86,14 +85,12 @@
     "tooltip": false,
   },
 
-  "clock": {
-    "format": "{:%A, %B %d   %I %M %p}",
-    "rotate": 0,
-    "format-alt": "{:%I:%M %p | %d %B}",
-    "tooltip": false,
+  "custom/clock": {
+    "exec": "date '+%a, %b %d   %H:%M' | awk '{print tolower($0)}'",
+    "interval": 60,
+    "tooltip": false
   },
 
-  
   "custom/divider": {
     "format": "|",
     "tooltip": false
