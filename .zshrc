@@ -108,8 +108,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias cdpra="cd ~/Documents/programming/practice/"
-alias cdstu="cd ~/Documents/programming/study/"
+alias cdpra="z ~/Documents/programming/practice/"
+alias cdstu="z ~/Documents/programming/study/"
 alias acv="cd backend/ && . venv/bin/activate && cd .."
 alias dacv=". venv/bin/deactivate"
 alias pacupdate='sudo pacman -Syu'
@@ -144,3 +144,5 @@ function y() {
 	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
 	rm -f -- "$tmp"
 }
+
+eval "$(zoxide init zsh)"
