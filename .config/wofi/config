@@ -1,0 +1,10 @@
+[config]
+allow_images=true
+show=drun
+hide_scroll=true
+no_actions=true
+width=600
+height=400
+image_size=24
+prompt=Search for an app
+term=foot
