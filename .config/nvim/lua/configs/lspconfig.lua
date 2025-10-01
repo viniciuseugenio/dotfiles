@@ -1,4 +1,4 @@
-local lspconfig = require "lspconfig"
+local lspconfig = vim.lsp.config
 local nvlsp = require "nvchad.configs.lspconfig"
 
 nvlsp.defaults()
@@ -37,5 +37,6 @@ for name, custom_opts in pairs(servers) do
     capabilites = nvlsp.capabilites,
   }, custom_opts)
 
-  lspconfig[name].setup(opts)
+  lspconfig(name, opts)
+  vim.lsp.enable(name)
 end
