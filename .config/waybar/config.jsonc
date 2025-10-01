@@ -30,7 +30,7 @@
   ],
 
   "memory": {
-    "format": "  {percentage}%"
+    "format": "mem: {percentage}%"
   },
 
   "custom/logo": {
@@ -78,9 +78,9 @@
 
 
   "pulseaudio": {
-    "format": "  {volume}%",
+    "format": "vol: {volume}%",
     "rotate": 0,
-    "format-muted": "  Muted",
+    "format-muted": "vol: muted",
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "scroll-step": 5,
     "tooltip": false,
