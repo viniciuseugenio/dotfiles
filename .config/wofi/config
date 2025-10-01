@@ -1,10 +1,9 @@
 [config]
-allow_images=true
 show=drun
 hide_scroll=true
 no_actions=true
-width=600
-height=400
+width=400
+height=250
 image_size=24
-prompt=Search for an app
+prompt=search 
 term=foot
