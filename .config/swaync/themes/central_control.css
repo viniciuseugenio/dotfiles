@@ -1,7 +1,7 @@
 @define-color text #f8f7f5;
-@define-color color1 #242019;
+@define-color color1 #101010;
 @define-color color2 #242019;
-@define-color background-alt alpha(@color1, 1);
+@define-color background-alt alpha(#101010, 1);
 @define-color selected #b59e7d;
 @define-color hover alpha(@selected, .4);
 @define-color urgent @color2;
@@ -12,7 +12,7 @@
 
   all: unset;
   font-size: 14px;
-  font-family: "SF Pro Display";
+  font-family: "JetBrainsMono Nerd Font";
   transition: 200ms;
 }
 
@@ -24,8 +24,7 @@
 /* CONTROL CENTER ------------------------------------------------------------------------ */
 
 .control-center {
-  background: alpha(@background, 0.7);
-  border-radius: 10px;
+  background: alpha(#101010, 0.95);
   border: 2px solid #b59e7d;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
   margin: 18px;

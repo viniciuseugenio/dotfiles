@@ -2,14 +2,14 @@
 @define-color color1 #362f25;
 @define-color color2 #242019;
 @define-color color3 #1b1813;
-@define-color background #12100c;
+@define-color background #191919;
 @define-color background-alt @color1;
-@define-color selected @color3;
+@define-color selected alpha(@color3, 0.5);
 @define-color hover @color5;
 @define-color urgent @color2;
 
+/*background-alt:        @color1;      Buttons background */
 * {
-  /*background-alt:        @color1;      Buttons background */
   /*selected:              @color2;      Button selected */
   /*hover:                 @color5;      Hover button */
   /*urgent:                @color6;      Urgency critical */
@@ -19,7 +19,7 @@
 
   all: unset;
   font-size: 18px;
-  font-family: "SF Pro Display";
+  font-family: "JetBrainsMono Nerd Font";
   transition: 300ms;
 }
 
@@ -31,16 +31,14 @@
 
 .floating-notifications.background .notification-row .notification-background {
   background: alpha(@background, 0.55);
-  border: 2px solid @selected;
-  border-radius: 10px;
+  border: 2px solid #7c6f64;
+  border-radius: 0px;
   margin: 16px 16px 0px 16px;
   padding: 2px 8px 2px 2px;
 }
 
-.floating-notifications.background
-  .notification-row
-  .notification-background
-  .notification {
+.floating-notifications.background .notification-row .notification,
+.notification-background {
   padding: 3px;
   border-radius: 12px;
 }
@@ -109,12 +107,13 @@
 }
 
 .summary {
-  font-weight: 800;
+  font-weight: 700;
   font-size: 1.2rem;
+  color: #afa193;
 }
 
 .body {
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .floating-notifications.background
@@ -129,7 +128,7 @@
 }
 
 .floating-notifications.background
-  .notification-row
+  .notification-rjw
   .notification-background
   .close-button:hover {
   background-color: @selected;

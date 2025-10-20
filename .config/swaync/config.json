@@ -16,9 +16,9 @@
   "timeout": 4,
   "timeout-low": 2,
   "timeout-critical": 6,
-  "fit-to-screen": false,
+  "fit-to-screen": true,
   "keyboard-shortcuts": true,
-  "image-visibility": "when-available",
+  "image-visibility": "never",
   "transition-time": 200,
   "hide-on-clear": false,
   "hide-on-action": false,
@@ -38,7 +38,6 @@
   },
   "widgets": [
     "label",
-    "buttons-grid",
     "mpris",
     "title",
     "dnd",
@@ -60,10 +59,6 @@
     "mpris": {
       "image-size": 96,
       "image-radius": 12
-    },
-    "volume": {
-      "label": "󰕾",
-      "show-per-app": true
     },
     "buttons-grid": {
       "actions": [
