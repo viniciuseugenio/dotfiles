@@ -124,6 +124,7 @@ alias nvchad='NVIM_APPNAME=nvchad nvim'
 alias nvlazy='NVIM_APPNAME=lazyvim nvim'
 alias v='nvim'
 alias rm='trash-put'
+alias ll='ls -alFtr'
 
 source /home/vinicius/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
