@@ -123,6 +123,7 @@ alias ssh-pass='eval $(ssh-agent -s) && ssh-add ~/.ssh/id_ed25519'
 alias nvchad='NVIM_APPNAME=nvchad nvim'
 alias nvlazy='NVIM_APPNAME=lazyvim nvim'
 alias v='nvim'
+alias rm='trash-put'
 
 source /home/vinicius/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
