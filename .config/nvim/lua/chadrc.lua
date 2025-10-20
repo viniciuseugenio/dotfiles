@@ -7,11 +7,6 @@ local M = {}
 
 M.base46 = {
   theme = "carbonfox",
-
-  -- hl_override = {
-  -- 	Comment = { italic = true },
-  -- 	["@comment"] = { italic = true },
-  -- },
 }
 
 M.nvdash = {
@@ -40,17 +35,15 @@ M.nvdash = {
 }
 
 M.ui = {
-  tabufline = {
-    enabled = false,
-  },
+  telescope = { style = "bordered" },
 }
 
 M.term = {
   float = {
-    height = 1,
-    row = 0,
-    width = 1,
-    col = 0,
+    height = 0.7,
+    row = 0.15,
+    width = 0.8,
+    col = 0.1,
   },
 }
 
