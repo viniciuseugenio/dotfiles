@@ -23,12 +23,11 @@ map("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move Down" })
 
 -- Files & buffer navigation
 map("n", "<leader><leader>", "<cmd> Telescope find_files <cr>", { desc = "Find files" })
-map("n", "<Tab>", "<Cmd>BufferLineCycleNext<CR>", { desc = "Next tab" })
-map("n", "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", { desc = "Previous tab" })
-map("n", "<S-l>", "<Cmd>BufferLineCycleNext<CR>", { desc = "Next tab" })
-map("n", "<S-h>", "<Cmd>BufferLineCyclePrev<CR>", { desc = "Previous tab" })
-map("n", "<leader>b", "<Cmd>tabnew<CR>", { desc = "New Tab" })
-map("n", "<leader>x", "<Cmd>tabclose<CR>", { desc = "Close Tab" })
+map("n", "<S-l>", "<cmd>tabnext<CR>", { desc = "Next tab" })
+map("n", "<S-h>", "<cmd>tabprevious<CR>", { desc = "Previous tab" })
+map("n", "<leader>tn", "<cmd>tabnew<CR>", { desc = "Create new tab" })
+map("n", "<leader>tc", "<cmd>tabclose<CR>", { desc = "Close tab" })
+map("n", "<leader>x", "<cmd>bdelete<CR>", { desc = "Close tab" })
 
 -- LSP mappings
 map("n", "gd", vim.lsp.buf.definition, { noremap = true, silent = true })
@@ -62,7 +61,7 @@ map("n", "<leader>cn", function()
   require("noice").cmd "dismiss"
 end, { desc = "Dismiss all notifications" })
 
-map("n", "<S-l>", "<Cmd>Lazy sync<CR>", { desc = "Open lazyvim panel" })
+map("n", "<leader>ls", "<Cmd>Lazy sync<CR>", { desc = "Sync lazy packages" })
 
 map("n", "<leader>qs", function()
   require("persistence").load()
