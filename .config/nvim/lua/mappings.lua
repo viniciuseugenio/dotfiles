@@ -3,6 +3,8 @@ require "nvchad.mappings"
 -- add yours here
 
 local map = vim.keymap.set
+local discipline = require "vinicius.discipline"
+discipline.cowboy()
 
 -- Basic/Utility mappings
 map("n", ";", ":", { desc = "CMD enter command mode" })
