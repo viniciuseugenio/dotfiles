@@ -12,6 +12,7 @@ local servers = {
   tailwindcss = {},
   basedpyright = {},
   dockerls = {},
+  jsonls = {},
   emmet_ls = {
     filetypes = {
       "html",
