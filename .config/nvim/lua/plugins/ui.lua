@@ -24,19 +24,6 @@ return {
       "typescript",
       "tsx",
     },
-    opts = {
-      textobjects = {
-        select = {
-          enabled = true,
-          lookahead = true,
-
-          keymaps = {
-            ["ab"] = "@block.outer",
-            ["ib"] = "@block.inner",
-          },
-        },
-      },
-    },
   },
   {
     "echasnovski/mini.indentscope",
@@ -110,55 +97,89 @@ return {
       stages = "slide",
     },
   },
-  {
-    "akinsho/bufferline.nvim",
-    version = "*",
-    lazy = false,
-    dependencies = "nvim-tree/nvim-web-devicons",
-    keys = {
-      { "<Tab>", "<Cmd>BufferLineCycleNext<CR>", desc = "Next tab" },
-      { "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", desc = "Prev tab" },
-    },
-    opts = {
-      highlights = {
-        fill = {
-          bg = colors.darker_black,
-        },
-        background = {
-          fg = colors.light_grey,
-          bg = colors.black2,
-        },
-        buffer_selected = {
-          fg = colors.white,
-          bg = colors.black,
-          bold = true,
-        },
-        separator = {
-          fg = colors.black2,
-          bg = colors.black2,
-        },
-        separator_selected = {
-          fg = colors.black,
-          bg = colors.black,
-        },
-      },
-      options = {
-        mode = "tabs",
-        modified_icon = "●",
-        color_icons = true,
-        show_buffer_icons = true,
-        show_buffer_close_icons = false,
-        show_close_icon = false,
-        show_duplicate_prefix = false,
-      },
-    },
-  },
+  -- {
+  --   "akinsho/bufferline.nvim",
+  --   version = "*",
+  --   lazy = false,
+  --   dependencies = "nvim-tree/nvim-web-devicons",
+  --   keys = {
+  --     { "<Tab>",   "<Cmd>BufferLineCycleNext<CR>", desc = "Next tab" },
+  --     { "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", desc = "Prev tab" },
+  --   },
+  --   opts = {
+  --     highlights = {
+  --       fill = {
+  --         bg = colors.darker_black,
+  --       },
+  --       background = {
+  --         fg = colors.light_grey,
+  --         bg = colors.black2,
+  --       },
+  --       buffer_selected = {
+  --         fg = colors.white,
+  --         bg = colors.black,
+  --         bold = true,
+  --       },
+  --       separator = {
+  --         fg = colors.black2,
+  --         bg = colors.black2,
+  --       },
+  --       separator_selected = {
+  --         fg = colors.black,
+  --         bg = colors.black,
+  --       },
+  --     },
+  --     options = {
+  --       mode = "tabs",
+  --       modified_icon = "●",
+  --       color_icons = true,
+  --       show_buffer_icons = true,
+  --       show_buffer_close_icons = false,
+  --       show_close_icon = false,
+  --       show_duplicate_prefix = false,
+  --     },
+  --   },
+  -- },
   {
     "nvim-tree/nvim-tree.lua",
     opts = {
       view = {
         side = "right",
+        width = 32,
       },
     },
+  },
+  {
+    "b0o/incline.nvim",
+    config = function()
+      require("incline").setup {
+        highlight = {
+          groups = {
+            InclineNormal = { guibg = colors.dark_purple, guifg = colors.black },
+            InclineNormalNC = { guibg = colors.darker_black, guifg = colors.baby_pink },
+          },
+        },
+        hide = {
+          cursorline = true,
+        },
+        window = {
+          margin = {
+            vertical = 0,
+            horizontal = 1,
+          },
+        },
+        render = function(props)
+          local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")
+          if vim.bo[props.buf].modified then
+            filename = "[+]" .. filename
+          end
+
+          local icon, color = require("nvim-web-devicons").get_icon_color(filename)
+          return { { icon, guifg = colors.black }, { " " }, { filename } }
+        end,
+      }
+    end,
+    -- Optional: Lazy load Incline
+    event = "VeryLazy",
   },
 }
