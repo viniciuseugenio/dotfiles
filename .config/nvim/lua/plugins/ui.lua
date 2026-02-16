@@ -171,7 +171,7 @@ return {
     opts = {
       view = {
         side = "right",
-        width = 32,
+        width = 40,
       },
     },
   },
