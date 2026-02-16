@@ -11,14 +11,12 @@
   "margin-left": 0,
   "margin-bottom": 0,
   "spacing": 4,
-
   "modules-left": [
-    "custom/logo",
-    "hyprland/workspaces",
+    "hyprland/workspaces"
   ],
-
-  "modules-center": ["mpris"],
-
+  "modules-center": [
+    "mpris"
+  ],
   "modules-right": [
     "pulseaudio",
     "custom/divider",
@@ -26,25 +24,16 @@
     "custom/divider",
     "custom/clock",
     "custom/divider",
-    "tray",
+    "tray"
   ],
-
   "memory": {
     "format": "mem: {percentage}%"
   },
-
-  "custom/logo": {
-    "format": "󰣇",
-    "interval": "once",
-    "tooltip": false,
-  },
-
   "custom/notify": {
     "format": "󰂚",
     "on-click": "swaync-client -t -sw",
-    "tooltip": false,
+    "tooltip": false
   },
-
   "hyprland/workspaces": {
     "disable-scroll": true,
     "rotate": 0,
@@ -55,27 +44,25 @@
       "*": 3,
     },
   },
-
   "tray": {
     "spacing": 5,
   },
-
-
   "mpris": {
     "format": "{status_icon} {artist} - {title}",
+    "format-paused": "{status_icon} {artist} - {title}",
+    "format-stopped": "{status_icon} No media playing",
     "status-icons": {
       "playing": "⏸",
-      "paused": "▶"
+      "paused": "▶",
+      "stopped": "⏹"
     },
     "max-length": 50,
-    "scroll": true,
     "on-click": "playerctl play-pause",
     "on-scroll-up": "playerctld shift",
     "on-scroll-down": "playerctld unshift",
     "on-middle-click": "playerctl previous",
-    "on-click-right": "playerctl next",
+    "on-click-right": "playerctl next"
   },
-
   "pulseaudio": {
     "format": "vol: {volume}%",
     "rotate": 0,
@@ -84,13 +71,11 @@
     "scroll-step": 5,
     "tooltip": false,
   },
-
   "custom/clock": {
     "exec": "date '+%a, %b %d   %H:%M' | awk '{print tolower($0)}'",
     "interval": 60,
     "tooltip": false
   },
-
   "custom/divider": {
     "format": "|",
     "tooltip": false

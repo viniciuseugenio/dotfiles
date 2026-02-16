@@ -9,7 +9,10 @@
 
 window#waybar {
   background: #12100c;
-  opacity: 0.95;
+}
+
+button {
+  box-shadow: none;
 }
 
 #workspaces button {
@@ -24,6 +27,8 @@ window#waybar {
 
 #workspaces button:hover {
   color: #fbf1c7;
+  box-shadow: none;
+  background: #362f25;
 }
 
 #battery,
