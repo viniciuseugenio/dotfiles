@@ -36,6 +36,9 @@ M.nvdash = {
 
 M.ui = {
   telescope = { style = "bordered" },
+  tabufline = {
+    enabled = false,
+  },
 }
 
 M.term = {

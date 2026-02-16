@@ -97,49 +97,75 @@ return {
       stages = "slide",
     },
   },
-  -- {
-  --   "akinsho/bufferline.nvim",
-  --   version = "*",
-  --   lazy = false,
-  --   dependencies = "nvim-tree/nvim-web-devicons",
-  --   keys = {
-  --     { "<Tab>",   "<Cmd>BufferLineCycleNext<CR>", desc = "Next tab" },
-  --     { "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", desc = "Prev tab" },
-  --   },
-  --   opts = {
-  --     highlights = {
-  --       fill = {
-  --         bg = colors.darker_black,
-  --       },
-  --       background = {
-  --         fg = colors.light_grey,
-  --         bg = colors.black2,
-  --       },
-  --       buffer_selected = {
-  --         fg = colors.white,
-  --         bg = colors.black,
-  --         bold = true,
-  --       },
-  --       separator = {
-  --         fg = colors.black2,
-  --         bg = colors.black2,
-  --       },
-  --       separator_selected = {
-  --         fg = colors.black,
-  --         bg = colors.black,
-  --       },
-  --     },
-  --     options = {
-  --       mode = "tabs",
-  --       modified_icon = "●",
-  --       color_icons = true,
-  --       show_buffer_icons = true,
-  --       show_buffer_close_icons = false,
-  --       show_close_icon = false,
-  --       show_duplicate_prefix = false,
-  --     },
-  --   },
-  -- },
+  {
+    "akinsho/bufferline.nvim",
+    version = "*",
+    lazy = false,
+    dependencies = "nvim-tree/nvim-web-devicons",
+    keys = {
+      { "<Tab>",   "<Cmd>BufferLineCycleNext<CR>", desc = "Next tab" },
+      { "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", desc = "Prev tab" },
+    },
+    opts = {
+      highlights = {
+        fill = {
+          bg = colors.darker_black,
+        },
+        background = {
+          fg = colors.light_grey,
+          bg = colors.black2,
+        },
+        duplicate = {
+          fg = colors.white,
+          bg = colors.black2,
+        },
+        buffer_selected = {
+          fg = colors.white,
+          bg = colors.black,
+          bold = true,
+        },
+        duplicate_selected = {
+          fg = colors.grey,
+          bg = colors.black,
+          bold = true,
+        },
+        separator = {
+          fg = colors.grey,
+          bg = colors.black2,
+        },
+        separator_visible = {
+          fg = colors.red,
+          bg = colors.red,
+        },
+        indicator_selected = {
+          fg = colors.yellow,
+          bg = colors.black,
+        },
+        modified = {
+          fg = colors.white,
+          bg = colors.black2,
+        },
+        modified_selected = {
+          fg = colors.white,
+          bg = colors.black,
+        },
+      },
+      options = {
+        mode = "tabs",
+        themable = true,
+        modified_icon = "◉",
+        color_icons = true,
+        show_buffer_icons = true,
+        show_buffer_close_icons = false,
+        show_close_icon = false,
+        indicator = {
+          icon = "▎", -- this should be omitted if indicator style is not 'icon'
+          style = "icon",
+        },
+        separator_style = "thin",
+      },
+    },
+  },
   {
     "nvim-tree/nvim-tree.lua",
     opts = {

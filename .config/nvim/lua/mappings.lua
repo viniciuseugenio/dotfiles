@@ -10,6 +10,8 @@ discipline.cowboy()
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 map("n", "<C-a>", "gg<S-v>G", { desc = "Select all" })
+map("v", "<C-c>", '"+y', { desc = "Copy to system clipboard" })
+map("n", "<C-c>", '"+yy', { desc = "Copy current line to system clipboard" })
 
 -- Copy current line, comment it and paste
 map("n", "ycc", "yygccp", { remap = true })
@@ -25,9 +27,11 @@ map("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move Down" })
 map("n", "<leader><leader>", "<cmd> Telescope find_files <cr>", { desc = "Find files" })
 map("n", "<S-l>", "<cmd>tabnext<CR>", { desc = "Next tab" })
 map("n", "<S-h>", "<cmd>tabprevious<CR>", { desc = "Previous tab" })
-map("n", "<leader>tn", "<cmd>tabnew<CR>", { desc = "Create new tab" })
-map("n", "<leader>tc", "<cmd>tabclose<CR>", { desc = "Close tab" })
-map("n", "<leader>x", "<cmd>bdelete<CR>", { desc = "Close tab" })
+map("n", "<leader>b", "<cmd>tabnew<CR>", { desc = "Create new tab" })
+-- map("n", "<leader>tc", "<cmd>tabclose<CR>", { desc = "Close tab" })
+-- map("n", "<leader>x", '<cmd>lua require("nvchad.tabufline").close_buffer()<CR>', { desc = "Close buffer" })
+map("n", "<leader>x", "<cmd>tabclose<CR>", { desc = "Close tab" })
+-- map("n", "<leader>bda", "<cmd>%bd | e#<CR>", { desc = "Delete all buffers except the current" })
 
 -- LSP mappings
 map("n", "gd", vim.lsp.buf.definition, { noremap = true, silent = true })
