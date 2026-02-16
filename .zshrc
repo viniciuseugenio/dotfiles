@@ -128,6 +128,7 @@ alias ll='eza -al --classify=auto --sort=modified --group-directories-first'
 alias install='sudo pacman -S'
 alias remove='sudo pacman -Rns'
 alias footconfig='cd ~/.config/foot/ && v foot.ini'
+alias d='docker'
 
 source /home/vinicius/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
