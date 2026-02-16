@@ -1,6 +1,9 @@
 -- Auto-format on save
 vim.api.nvim_create_autocmd("BufWritePre", {
   callback = function()
+    if vim.bo.filetype == "txt" or vim.bo.filetype == "text" then
+      return
+    end
     vim.lsp.buf.format { async = false }
   end,
 })
