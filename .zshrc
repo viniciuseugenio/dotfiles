@@ -113,20 +113,25 @@ alias cdstu="z ~/Documents/programming/study/"
 alias acv="cd backend/ && . venv/bin/activate && cd .."
 alias dacv=". venv/bin/deactivate"
 alias update='sudo pacman -Syu'
-alias nconf='cd ~/.config/nvim/ && nvim'
+alias nconfig='cd ~/.config/nvim/ && nvim'
 alias runsv='python manage.py runserver'
 alias config='cd ~/.config/hypr/ && nvim'
-alias alaconf='cd ~/.config/alacritty/ && nvim alacritty.toml'
-alias wayconf='cd ~/.config/waybar/ && nvim config.jsonc'
+alias barconfig='cd ~/.config/waybar/ && nvim config.jsonc'
 alias paperestart='pkill hyprpaper && hyprpaper &'
-alias ssh-pass='eval $(ssh-agent -s) && ssh-add ~/.ssh/id_ed25519'
+alias ssh-start='ssh-add ~/.ssh/id_ed25519'
 alias nvchad='NVIM_APPNAME=nvchad nvim'
 alias nvlazy='NVIM_APPNAME=lazyvim nvim'
 alias v='nvim'
+alias sv='sudo -E nvim'
 alias rm='trash-put'
-alias ll='ls -alFtr'
+alias ll='eza -al --classify=auto --sort=modified --group-directories-first'
+alias install='sudo pacman -S'
+alias remove='sudo pacman -Rns'
+alias footconfig='cd ~/.config/foot/ && v foot.ini'
 
 source /home/vinicius/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+export EDITOR=nvim
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -148,3 +153,5 @@ function y() {
 }
 
 eval "$(zoxide init zsh)"
+
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
