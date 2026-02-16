@@ -13,6 +13,8 @@ local servers = {
   basedpyright = {},
   dockerls = {},
   jsonls = {},
+  jdtls = {},
+  text = {},
   emmet_ls = {
     filetypes = {
       "html",

@@ -81,23 +81,7 @@ return {
   {
     "stevearc/conform.nvim",
     event = { "BufReadPre", "BufNewFile" },
-    opts = {
-      format_on_save = {
-        timeout_ms = 1000,
-        lsp_format = "fallback",
-      },
-      formatters_by_ft = {
-        lua = { "stylua" },
-        python = { "isort", "black" },
-        rust = { "rustfmt", lsp_format = "fallback" },
-        javascript = { "prettier" },
-        typescript = { "prettier" },
-        javascriptreact = { "prettier" },
-        typescriptreact = { "prettier" },
-        css = { "prettier" },
-        html = { "prettier" },
-      },
-    },
+    opts = require "configs.conform",
   },
   {
     "barrett-ruth/live-server.nvim",
