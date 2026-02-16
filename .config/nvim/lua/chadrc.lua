@@ -42,11 +42,12 @@ M.ui = {
 }
 
 M.term = {
+  base46_colors = false,
   float = {
-    height = 0.7,
-    row = 0.15,
-    width = 0.8,
-    col = 0.1,
+    height = 0.88,
+    row = 0.04,
+    width = 0.9,
+    col = 0.05,
   },
 }
 
