@@ -19,10 +19,26 @@ o.relativenumber = true
 -- end)
 --
 
-vim.api.nvim_set_hl(0, "DiagnosticUnderlineError", { undercurl = true })
-vim.api.nvim_set_hl(0, "DiagnosticUnderlineWarn", { undercurl = true })
-vim.api.nvim_set_hl(0, "DiagnosticUnderlineInfo", { undercurl = true })
-vim.api.nvim_set_hl(0, "DiagnosticUnderlineHint", { undercurl = true })
+vim.api.nvim_set_hl(
+  0,
+  "DiagnosticUnderlineError",
+  { undercurl = true, sp = vim.api.nvim_get_hl(0, { name = "DiagnosticError" }).fg }
+)
+vim.api.nvim_set_hl(
+  0,
+  "DiagnosticUnderlineWarn",
+  { undercurl = true, sp = vim.api.nvim_get_hl(0, { name = "DiagnosticWarn" }).fg }
+)
+vim.api.nvim_set_hl(
+  0,
+  "DiagnosticUnderlineInfo",
+  { undercurl = true, sp = vim.api.nvim_get_hl(0, { name = "DiagnosticInfo" }).fg }
+)
+vim.api.nvim_set_hl(
+  0,
+  "DiagnosticUnderlineHint",
+  { undercurl = true, sp = vim.api.nvim_get_hl(0, { name = "DiagnosticHint" }).fg }
+)
 
 o.wrap = false
 o.scrolloff = 4
