@@ -5,6 +5,7 @@ require "nvchad.options"
 local o = vim.o
 o.cursorlineopt = "both" -- to enable cursorline!
 o.relativenumber = true
+o.clipboard = ""
 
 -- vim.api.nvim_create_autocmd("BufWritePre", {
 --   pattern = "*",
