@@ -3,9 +3,10 @@ require "nvchad.options"
 -- add yours here!
 
 local o = vim.o
-o.cursorlineopt = "both" -- to enable cursorline!
+-- o.cursorlineopt = "both" -- to enable cursorline!
 o.relativenumber = true
 o.clipboard = ""
+o.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait300-blinkon250-blinkoff150"
 
 -- vim.api.nvim_create_autocmd("BufWritePre", {
 --   pattern = "*",
@@ -41,5 +42,7 @@ vim.api.nvim_set_hl(
   { undercurl = true, sp = vim.api.nvim_get_hl(0, { name = "DiagnosticHint" }).fg }
 )
 
-o.wrap = false
+o.wrap = true
+o.linebreak = true
+o.breakindent = true
 o.scrolloff = 4
