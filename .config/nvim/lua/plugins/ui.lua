@@ -103,7 +103,7 @@ return {
     lazy = false,
     dependencies = "nvim-tree/nvim-web-devicons",
     keys = {
-      { "<Tab>",   "<Cmd>BufferLineCycleNext<CR>", desc = "Next tab" },
+      { "<Tab>", "<Cmd>BufferLineCycleNext<CR>", desc = "Next tab" },
       { "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", desc = "Prev tab" },
     },
     opts = {
@@ -207,5 +207,11 @@ return {
     end,
     -- Optional: Lazy load Incline
     event = "VeryLazy",
+  },
+  {
+    "MaximilianLloyd/ascii.nvim",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+    },
   },
 }
