@@ -110,7 +110,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias cdpra="z ~/Documents/programming/practice/"
 alias cdstu="z ~/Documents/programming/study/"
-alias acv="cd backend/ && . venv/bin/activate && cd .."
+alias acv=". backend/.venv/bin/activate || . .venv/bin/activate"
 alias dacv=". venv/bin/deactivate"
 alias update='sudo pacman -Syu'
 alias nconfig='cd ~/.config/nvim/ && nvim'
@@ -129,6 +129,7 @@ alias install='sudo pacman -S'
 alias remove='sudo pacman -Rns'
 alias footconfig='cd ~/.config/foot/ && v foot.ini'
 alias d='docker'
+alias uvm='uv run manage.py'
 
 source /home/vinicius/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
