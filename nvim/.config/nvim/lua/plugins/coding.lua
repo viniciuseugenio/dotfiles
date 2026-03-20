@@ -122,6 +122,7 @@ return {
   { "nvim-java/nvim-java" },
   {
     "nvim-pack/nvim-spectre",
+    lazy = false,
   },
   {
     "antosha417/nvim-lsp-file-operations",
@@ -142,19 +143,6 @@ return {
     version = "*", -- Use the latest tagged version
     opts = {}, -- This causes the plugin setup function to be called
     keys = {
-      {
-        "<C-j>",
-        "<Cmd>MultipleCursorsAddDown<CR>",
-        mode = { "n", "x" },
-        desc = "Add cursor and move down",
-      },
-      {
-        "<C-k>",
-        "<Cmd>MultipleCursorsAddUp<CR>",
-        mode = { "n", "x" },
-        desc = "Add cursor and move up",
-      },
-
       {
         "<C-Up>",
         "<Cmd>MultipleCursorsAddUp<CR>",
@@ -215,5 +203,9 @@ return {
         desc = "Lock virtual cursors",
       },
     },
+  },
+  {
+    "christoomey/vim-tmux-navigator",
+    lazy = false,
   },
 }

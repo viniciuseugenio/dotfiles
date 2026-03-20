@@ -70,3 +70,8 @@ map("n", "<leader>ls", "<Cmd>Lazy sync<CR>", { desc = "Sync lazy packages" })
 map("n", "<leader>qs", function()
   require("persistence").load()
 end)
+
+map("n", "<c-h>", "<cmd>TmuxNavigateLeft<cr>")
+map("n", "<c-j>", "<cmd>TmuxNavigateDown<cr>")
+map("n", "<c-k>", "<cmd>TmuxNavigateUp<cr>")
+map("n", "<c-l>", "<cmd>TmuxNavigateRight<cr>")

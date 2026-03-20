@@ -15,6 +15,10 @@ local servers = {
   jsonls = {},
   jdtls = {},
   text = {},
+  yamlls = {},
+  shfmt = {},
+  sqlls = {},
+  tombi = {},
   emmet_ls = {
     filetypes = {
       "html",
