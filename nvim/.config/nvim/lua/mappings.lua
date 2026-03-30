@@ -12,6 +12,7 @@ map("i", "jk", "<ESC>")
 map("n", "<C-a>", "gg<S-v>G", { desc = "Select all" })
 map("v", "<C-c>", '"+y', { desc = "Copy to system clipboard" })
 map("n", "<C-c>", '"+yy', { desc = "Copy current line to system clipboard" })
+map("n", "<A-0>", "^", { desc = "Move to first non-blank character of the line" })
 
 -- Copy current line, comment it and paste
 map("n", "ycc", "yygccp", { remap = true })
@@ -25,6 +26,7 @@ map("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move Down" })
 
 -- Files & buffer navigation
 map("n", "<leader><leader>", "<cmd> Telescope find_files <cr>", { desc = "Find files" })
+map("n", "<C-p>", "<cmd> Telescope git_files <cr>", { desc = "Find files" })
 map("n", "<S-l>", "<cmd>tabnext<CR>", { desc = "Next tab" })
 map("n", "<S-h>", "<cmd>tabprevious<CR>", { desc = "Previous tab" })
 map("n", "<leader>b", "<cmd>tabnew<CR>", { desc = "Create new tab" })

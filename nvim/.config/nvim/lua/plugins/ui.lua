@@ -214,4 +214,13 @@ return {
       "MunifTanjim/nui.nvim",
     },
   },
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+      cmdline = {
+        view = "cmdline",
+      },
+    },
+  },
 }
