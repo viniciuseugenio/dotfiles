@@ -20,9 +20,9 @@
   "modules-right": [
     "pulseaudio",
     "custom/divider",
-    "memory",
-    "custom/divider",
     "custom/clock",
+    "custom/divider",
+    "memory",
     "custom/divider",
     "tray"
   ],
@@ -41,22 +41,22 @@
     "active-only": false,
     "on-click": "activate",
     "persistent-workspaces": {
-      "*": 3,
-    },
+      "*": 3
+    }
   },
   "tray": {
-    "spacing": 5,
+    "spacing": 5
   },
   "mpris": {
-    "format": "{status_icon} {artist} - {title}",
-    "format-paused": "{status_icon} {artist} - {title}",
+    "format": "{status_icon} {title}",
+    "format-paused": "{status_icon} {title}",
     "format-stopped": "{status_icon} No media playing",
     "status-icons": {
       "playing": "⏸",
       "paused": "▶",
       "stopped": "⏹"
     },
-    "max-length": 50,
+    "max-length": 30,
     "on-click": "playerctl play-pause",
     "on-scroll-up": "playerctld shift",
     "on-scroll-down": "playerctld unshift",
@@ -72,7 +72,7 @@
     "tooltip": false,
   },
   "custom/clock": {
-    "exec": "date '+%a, %b %d   %H:%M' | awk '{print tolower($0)}'",
+    "exec": "date '+%a, %b %d [%H:%M]' | awk '{print tolower($0)}'",
     "interval": 60,
     "tooltip": false
   },
