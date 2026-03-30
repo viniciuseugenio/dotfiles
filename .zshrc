@@ -110,6 +110,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias cdpra="z ~/Documents/programming/practice/"
 alias cdstu="z ~/Documents/programming/study/"
+alias cd="z"
 alias acv=". backend/.venv/bin/activate || . .venv/bin/activate"
 alias dacv=". venv/bin/deactivate"
 alias update='sudo pacman -Syu'
@@ -130,6 +131,7 @@ alias remove='sudo pacman -Rns'
 alias footconfig='cd ~/.config/foot/ && v foot.ini'
 alias d='docker'
 alias uvm='uv run manage.py'
+alias cls='clear'
 
 source /home/vinicius/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -157,3 +159,6 @@ function y() {
 eval "$(zoxide init zsh)"
 
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+
+export PATH="$HOME/.tmuxifier/bin:$PATH"
+eval "$(tmuxifier init -)"
