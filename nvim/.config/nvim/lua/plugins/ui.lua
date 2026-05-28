@@ -6,11 +6,14 @@ return {
     opts = {
       indent = {
         smart_indent_cap = false,
+        char = "│",
       },
     },
   },
   {
     "nvim-treesitter/nvim-treesitter",
+    branch = "main",
+    auto_install = true,
     ensure_installed = {
       "css",
       "htmldjango",
@@ -78,9 +81,15 @@ return {
     event = "VeryLazy",
     opts = {
       lsp = {
+        progress = {
+          enabled = false,
+        },
         signature = {
           enabled = false,
         },
+      },
+      cmdline = {
+        view = "cmdline",
       },
       presets = {
         lsp_doc_border = true,
@@ -157,6 +166,7 @@ return {
         color_icons = true,
         show_buffer_icons = true,
         show_buffer_close_icons = false,
+        show_duplicate_prefix = false,
         show_close_icon = false,
         indicator = {
           icon = "▎", -- this should be omitted if indicator style is not 'icon'
@@ -212,15 +222,6 @@ return {
     "MaximilianLloyd/ascii.nvim",
     dependencies = {
       "MunifTanjim/nui.nvim",
-    },
-  },
-  {
-    "folke/noice.nvim",
-    event = "VeryLazy",
-    opts = {
-      cmdline = {
-        view = "cmdline",
-      },
     },
   },
 }
