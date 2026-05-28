@@ -1,0 +1,6 @@
+[Unit]
+Description=Set a new wallpaper via awww
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/awww-rotate-once.sh
