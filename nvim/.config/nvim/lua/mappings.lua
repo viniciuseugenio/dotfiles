@@ -3,8 +3,8 @@ require "nvchad.mappings"
 -- add yours here
 
 local map = vim.keymap.set
-local discipline = require "vinicius.discipline"
-discipline.cowboy()
+-- local discipline = require "vinicius.discipline"
+-- discipline.cowboy()
 
 -- Basic/Utility mappings
 map("n", ";", ":", { desc = "CMD enter command mode" })
@@ -34,6 +34,8 @@ map("n", "<leader>b", "<cmd>tabnew<CR>", { desc = "Create new tab" })
 -- map("n", "<leader>x", '<cmd>lua require("nvchad.tabufline").close_buffer()<CR>', { desc = "Close buffer" })
 map("n", "<leader>x", "<cmd>tabclose<CR>", { desc = "Close tab" })
 -- map("n", "<leader>bda", "<cmd>%bd | e#<CR>", { desc = "Delete all buffers except the current" })
+map("n", "<A-Left>", "<cmd>tabmove -1<CR>", { desc = "Move tab to the left" })
+map("n", "<A-Right>", "<cmd>tabmove +1<CR>", { desc = "Move tab to the right" })
 
 -- LSP mappings
 map("n", "gd", vim.lsp.buf.definition, { noremap = true, silent = true })

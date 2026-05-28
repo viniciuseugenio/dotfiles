@@ -132,6 +132,8 @@ alias footconfig='cd ~/.config/foot/ && v foot.ini'
 alias d='docker'
 alias uvm='uv run manage.py'
 alias cls='clear'
+alias tpt='trans :pt -d '
+alias ten='trans :en -d '
 
 source /home/vinicius/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 

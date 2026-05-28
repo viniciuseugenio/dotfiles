@@ -17,6 +17,7 @@ local servers = {
   text = {},
   yamlls = {},
   shfmt = {},
+  bashls = {},
   sqlls = {},
   tombi = {},
   emmet_ls = {
