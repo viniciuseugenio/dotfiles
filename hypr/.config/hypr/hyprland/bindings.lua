@@ -43,6 +43,7 @@ hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd("hyprshot -m region"))
 hl.bind(shiftMod .. " + N", hl.dsp.exec_cmd("swaync-client -t -sw"))
 hl.bind(shiftMod .. " + M", hl.dsp.exec_cmd("Telegram"))
 hl.bind(shiftMod .. " + T", hl.dsp.exec_cmd(floatingTerminal))
+hl.bind(shiftMod .. " + U", hl.dsp.exec_cmd("~/.config/hypr/toggle-scale.sh"))
 hl.bind(shiftMod .. " + R", hl.dsp.exec_cmd("hyprctl reload"))
 
 -- Resize windows via keyboard
