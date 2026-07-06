@@ -1,0 +1,89 @@
+-- [[ Basic Keymaps ]]
+--  See `:help vim.keymap.set()`
+
+-- Clear highlights on search when pressing <Esc> in normal mode
+--  See `:help hlsearch`
+local k = vim.keymap
+k.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
+-- Diagnostic Config & Keymaps
+--  See `:help vim.diagnostic.Opts`
+vim.diagnostic.config {
+  update_in_insert = false,
+  severity_sort = true,
+  float = { border = 'rounded', source = 'if_many' },
+  underline = { severity = { min = vim.diagnostic.severity.WARN } },
+
+  -- Can switch between these as you prefer
+  virtual_text = true, -- Text shows up at the end of the line
+  virtual_lines = false, -- Text shows up underneath the line, with virtual lines
+
+  -- Auto open the float, so you can easily read the errors when jumping with `[d` and `]d`
+  jump = {
+    on_jump = function(_, bufnr)
+      vim.diagnostic.open_float {
+        bufnr = bufnr,
+        scope = 'cursor',
+        focus = false,
+      }
+    end,
+  },
+}
+
+k.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+
+-- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
+-- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
+-- is not what someone will guess without a bit more experience.
+--
+-- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
+-- or just use <C-\><C-n> to exit terminal mode
+k.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+
+-- TIP: Disable arrow keys in normal mode
+-- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
+-- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
+-- vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
+-- vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
+
+-- Keybinds to make split navigation easier.
+--  Use CTRL+<hjkl> to switch between windows
+--
+--  See `:help wincmd` for a list of all window commands
+k.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
+k.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
+k.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
+k.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+k.set('n', ';', ':', { desc = 'Open command line' })
+k.set('i', 'jk', '<Esc>', { desc = 'Open command line' })
+k.set('i', '<C-h>', '<Left>', { desc = 'Go to the left in insert mode' })
+k.set('i', '<C-l>', '<Right>', { desc = 'Go to the right in insert mode' })
+k.set('n', '<leader>b', '<Cmd>tabnew<CR>', { desc = 'Open a new tab' })
+k.set('n', '<A-j>', '<Cmd>m .+1<CR>==', { silent = true })
+k.set('n', '<A-k>', '<Cmd>m .-2<CR>==', { silent = true })
+k.set('n', '<leader>x', '<Cmd>tabclose<CR>', { desc = 'Move to previous bufferline tab' })
+k.set('n', 's', 'cl')
+
+-- [[ Basic Autocommands ]]
+--  See `:help lua-guide-autocommands`
+
+-- Highlight when yanking (copying) text
+--  Try it with `yap` in normal mode
+--  See `:help vim.hl.on_yank()`
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Highlight when yanking (copying) text',
+  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+  callback = function() vim.hl.on_yank() end,
+})
+
+vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = 'Code Action' })
+vim.keymap.set(
+  'n',
+  '<leader>co',
+  function()
+    vim.lsp.buf.code_action {
+      context = { only = { 'source.organizeImports' } },
+    }
+  end,
+  { desc = 'Organize Imports' }
+)
