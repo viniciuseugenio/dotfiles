@@ -1,5 +1,9 @@
 # dotfiles
 
+![Terminal and notifications center](images/terminal-n-not.png)
+![Nvim screenshot](images/nvim.png)
+![Lock screen](images/lock.png)
+
 My personal **Hyprland** dotfiles.
 
 ## What is in this repo
