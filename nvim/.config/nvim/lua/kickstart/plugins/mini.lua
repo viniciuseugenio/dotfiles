@@ -33,3 +33,13 @@ require('mini.surround').setup()
 
 require('mini.files').setup()
 vim.keymap.set('n', '<leader>mf', '<Cmd>lua MiniFiles.open()<CR>')
+
+local starter = require 'mini.starter'
+starter.setup {
+  evaluate_single = true,
+  items = {
+    { name = 'Session load', action = 'lua require("persistence").load()', section = 'Builtin actions' },
+    starter.sections.builtin_actions(),
+    { name = 'Telescope Files', action = 'Telescope find_files', section = 'Telescope' },
+  },
+}
