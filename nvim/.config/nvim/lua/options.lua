@@ -20,7 +20,7 @@ vim.o.number = true
 vim.o.relativenumber = true
 
 -- Redefine the character used to display unexistent lines after the end of the file
-vim.opt.fillchars = { eob = '~' }
+vim.opt.fillchars = { eob = ' ' }
 
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
