@@ -12,7 +12,7 @@ require('incline').setup {
   render = function(props)
     local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ':t')
     if filename == '' then filename = '[No Name]' end
-    if modified == vim.bo[props.buf].modified then filename = '[+]' .. filename end
+    if vim.bo[props.buf].modified then filename = '[+]' .. filename end
     local icon, color = require('nvim-web-devicons').get_icon_color(filename)
     return { { icon, guifg = '#000' }, { ' ' }, { filename } }
   end,
